@@ -1,0 +1,61 @@
+﻿@page
+@model Web.Pages.Productos.EditarModel
+@{
+}
+
+<h1>Editar Producto</h1>
+
+<div class="container">
+    <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto">
+
+        <form method="post">
+
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group">
+                <label class="control-label" asp-for="productoRequest.Nombre"></label>
+                <input class="form-control" asp-for="productoRequest.Nombre" />
+                <span class="text-danger" asp-validation-for="productoRequest.Nombre"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" asp-for="productoRequest.Descripcion"></label>
+                <input class="form-control" asp-for="productoRequest.Descripcion" />
+                <span class="text-danger" asp-validation-for="productoRequest.Descripcion"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" asp-for="productoRequest.Precio"></label>
+                <input class="form-control" asp-for="productoRequest.Precio" />
+                <span class="text-danger" asp-validation-for="productoRequest.Precio"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" asp-for="productoRequest.Stock"></label>
+                <input class="form-control" asp-for="productoRequest.Stock" />
+                <span class="text-danger" asp-validation-for="productoRequest.Stock"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" asp-for="productoRequest.CodigoBarras"></label>
+                <input class="form-control" asp-for="productoRequest.CodigoBarras" />
+                <span class="text-danger" asp-validation-for="productoRequest.CodigoBarras"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" asp-for="productoRequest.IdSubCategoria"></label>
+                <input class="form-control" asp-for="productoRequest.IdSubCategoria" />
+                <span class="text-danger" asp-validation-for="productoRequest.IdSubCategoria"></span>
+            </div>
+
+            <div class="text-danger" asp-validation-summary="All"></div>
+
+            <div class="form-group">
+                <a class="btn btn-primary" asp-page="./Index">Regresar</a>
+                <input type="submit" value="Guardar cambios" class="btn btn-warning" />
+            </div>
+
+        </form>
+
+    </div>
+</div>
