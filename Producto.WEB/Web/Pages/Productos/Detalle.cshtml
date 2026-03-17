@@ -1,0 +1,55 @@
+﻿@page
+@model Web.Pages.Productos.DetalleModel
+@{
+}
+
+<h1>Detalle Producto</h1>
+
+<div class="container">
+
+    <div class="col-md-8">
+
+        <div class="card">
+
+            <div class="card-body">
+
+                <h5 class="card-title">
+                    @Html.DisplayFor(modelo => modelo.producto.Nombre)
+                </h5>
+
+                <div class="card-text">
+                    <b>@Html.DisplayNameFor(modelo => modelo.producto.Descripcion):</b>
+                    @Html.DisplayFor(modelo => modelo.producto.Descripcion)
+                </div>
+
+                <div class="card-text">
+                    <b>@Html.DisplayNameFor(modelo => modelo.producto.Precio):</b>
+                    @Html.DisplayFor(modelo => modelo.producto.Precio)
+                </div>
+
+                <div class="card-text">
+                    <b>@Html.DisplayNameFor(modelo => modelo.producto.Id):</b>
+                    @Html.DisplayFor(modelo => modelo.producto.Id)
+                </div>
+
+            </div>
+
+            <div class="card-footer">
+
+                <a class="btn btn-primary" asp-page="./Index">
+                    Regresar
+                </a>
+
+                <a class="btn btn-warning"
+                   asp-page="./Editar"
+                   asp-route-id="@Model.producto.Id">
+                    Editar
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
