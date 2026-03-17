@@ -9,6 +9,8 @@
 
     <form method="post">
 
+        <input type="hidden" asp-for="producto.Id" />
+
         <div class="col-md-8">
 
             <div class="card">
@@ -30,8 +32,13 @@
                     </div>
 
                     <div class="card-text">
-                        <b>@Html.DisplayNameFor(modelo => modelo.producto.Id):</b>
-                        @Html.DisplayFor(modelo => modelo.producto.Id)
+                        <b>@Html.DisplayNameFor(modelo => modelo.producto.Stock):</b>
+                        @Html.DisplayFor(modelo => modelo.producto.Stock)
+                    </div>
+
+                    <div class="card-text">
+                        <b>@Html.DisplayNameFor(modelo => modelo.producto.CodigoBarras):</b>
+                        @Html.DisplayFor(modelo => modelo.producto.CodigoBarras)
                     </div>
 
                 </div>

@@ -54,7 +54,7 @@ namespace Web.Pages.Productos
         {
             if(id == Guid.Empty) 
                 return NotFound();
-            if(ModelState.IsValid)
+            if (!ModelState.IsValid)
                 return Page();
 
             string endpoint = _configuracion.ObtenerMetodo("ApiEndPoints", "EliminarProducto");

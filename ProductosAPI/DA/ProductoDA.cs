@@ -15,19 +15,27 @@ namespace DA
             _repositorioDapper = repositorioDapper;
             _sqlConnection = _repositorioDapper.ObtenerRepositorio();
         }
-
         public async Task<Guid> Agregar(Producto.ProductoRequest producto)
         {
             string query = @"AgregarProducto";
-            var resultadoConsulta = await _sqlConnection.ExecuteScalarAsync<Guid>(query, new
-            {
-                IdSubCategoria = producto.IdSubCategoria,
-                Nombre = producto.Nombre,
-                Descripcion = producto.Descripcion,
-                Precio = producto.Precio,
-                Stock = producto.Stock,
-                CodigoBarras = producto.CodigoBarras
-            });
+
+            Guid id = Guid.NewGuid();
+
+            var resultadoConsulta = await _sqlConnection.ExecuteScalarAsync<Guid>(
+                query,
+                new
+                {
+                    Id = id,
+                    IdSubCategoria = producto.IdSubCategoria,
+                    Nombre = producto.Nombre,
+                    Descripcion = producto.Descripcion,
+                    Precio = producto.Precio,
+                    Stock = producto.Stock,
+                    CodigoBarras = producto.CodigoBarras
+                },
+                commandType: System.Data.CommandType.StoredProcedure
+            );
+
             return resultadoConsulta;
         }
 
